@@ -30,7 +30,6 @@ export default function Home() {
         <title>Stock Data Visualization</title>
       </Head>
       <main>
-        <h1>Welcome to Stock Data Visualization</h1>
         {loading ? <p>Loading data...</p> : <StockChart />}
       </main>
     </div>

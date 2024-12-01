@@ -9,7 +9,6 @@ const StockChart = () => {
     fetch('/api/getData')
       .then((response) => response.json())
       .then((data) => {
-        // Ensure data is an array of objects with the expected structure
         console.log(data);
         setData(data);
       })
@@ -27,12 +26,11 @@ const StockChart = () => {
   };
 
   return (
-    <div>
-      <h2>Stock Price Chart</h2>
-      { data.length ? <Line data={chartData} /> : <p>Loading data...</p> }
+    <div style={{ width: '80%', margin: '0 auto', padding: '20px' }}>
+      <h2 style={{ textAlign: 'center' }}>Stock Price Chart: AAPL</h2>
+      {data.length ? <Line data={chartData} /> : <p>Loading data...</p>}
     </div>
   );
 };
 
 export default StockChart;
-
